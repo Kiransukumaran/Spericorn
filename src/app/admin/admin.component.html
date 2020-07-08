@@ -1,0 +1,27 @@
+<div class="login">
+    <h1 style="text-align: center;color:red">SignUp</h1>
+    <form class="ui form" [formGroup]="form" (ngSubmit)="signup()">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" formControlName="name" placeholder="Name">
+          </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" formControlName="email" placeholder="Email">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <div class="field">
+            <label>Role</label>
+            <input type="radio" formControlName="role" value="USER" placeholder="Password"> User
+            <input type="radio" formControlName="role" value="ADMIN" placeholder="Password"> Admin
+          </div>
+        <div class="field">
+          <label>Photo</label>
+          <input type="file" (change)="addPhoto($event)" formControlName="photo" accept="image/jpeg, image/png, image/jpg" />
+        </div>
+        <button class="ui button" type="submit" [disabled]="!form.valid">SignUp</button>
+    </form>
+</div>
